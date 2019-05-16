@@ -1,0 +1,233 @@
+@import 'mixins';
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.navBar {
+  padding: 1%;
+  height: 50px;
+  border-bottom: 1px solid #ffffff;
+  box-shadow: 0px 1px 10px #eeeeee;
+  display: grid;
+  grid-template-columns: 6fr 8fr;
+  align-items: center;
+
+  .navItem {
+    text-decoration: none;
+    font-size: 20px;
+    color: #333333;
+    letter-spacing: 1px;
+    transition: color .2s;
+
+    &:hover {
+      cursor: pointer;
+      color: #999999;
+    }
+  }
+
+  .navLogo {
+    font-size: 40px;
+    font-weight: 900;
+    color: #333333;
+    letter-spacing: 2px;
+  }
+}
+
+.instructions {
+  padding: 4% 2% 2% 2%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: minmax(10px, auto);
+  grid-gap: 10px;
+
+  .description {
+    grid-column: 1;
+    grid-row: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+
+    .descPara {
+      border: 1px solid #aaaaaa;
+      padding: 2%;
+      width: 42vw;
+      font-size: 18px;
+      font-weight: 100;
+      letter-spacing: 2px;
+      line-height: 2;
+    }
+  }
+
+  .msgForm {
+    grid-column: 1;
+    grid-row: 2;
+    width: 50vw;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 2px;
+    align-items: center;
+
+    .msgInput {
+      justify-self: center;
+      height: 25px;
+      width: 90%;
+      padding: 1%;
+      border: 2px solid #cccccc;
+      border-radius: 2px;
+      letter-spacing: 1px;
+      font-size: 16px;
+    }
+
+    .submitBtn {
+      height: 40px;
+      width: 60%;
+      border: 2px solid #3688b8;
+      border-radius: 2px;
+      background: #ffffff;
+      font-size: 16px;
+      letter-spacing: 1px;
+      color: #333333;
+      transition: transform .2s;
+
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .queueDisplay {
+    grid-column: 2;
+    grid-row: 1/3;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 15% 80%;
+    border: 1px solid #aaaaaa;
+    padding: 2%;
+    margin-right: 2%;
+    width: 40vw;
+
+    .title {
+      justify-self: center;
+
+      .queueTitle {
+        height: 30px;
+        justify-self: center;
+        border-bottom: 4px solid #333333;
+        font-size: 20px;
+        font-weight: 400;
+        color: #333333;
+      }
+    }
+
+    .msgContainer {
+      @include messageContainer;
+    }
+  }
+}
+
+.devTool {
+  margin-top: 4%;
+  padding: 2%;
+  display: grid;
+  grid-template-columns: 1fr;
+
+  .devDisplay {
+    border: 1px solid #aaaaaa;
+    padding: 2%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+
+    .title {
+      justify-self: center;
+    }
+
+    .devTitle {
+      height: 30px;
+      justify-self: center;
+      border-bottom: 4px solid #333333;
+      font-size: 20px;
+      font-weight: 400;
+      color: #333333;
+    }
+
+    .messageContainer {
+      @include messageContainer
+    }
+  }
+}
+
+@media only screen and (max-width: 690px) {
+  .instructions {
+    padding: 4% 2% 2% 2%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: minmax(10px, auto);
+    grid-gap: 10px;
+    justify-items: center;
+
+    .description {
+      grid-column: 1;
+      grid-row: 2;
+
+      .descPara {
+        border: 1px solid #aaaaaa;
+        padding: 2%;
+        width: 70vw;
+      }
+    }
+
+    .msgForm {
+      margin-bottom: 4%;
+      width: 70vw;
+      grid-column: 1;
+      grid-row: 3;
+
+      .submitBtn {
+        font-size: 14px;
+        width: 80%;
+      }
+    }
+
+    .queueDisplay {
+      min-height: 250px;
+      grid-column: 1;
+      grid-row: 4;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 15% 80%;
+      padding: 2%;
+      margin-right: 2%;
+      width: 80vw;
+
+      .title {
+        justify-self: center;
+
+        .queueTitle {
+          height: 30px;
+          justify-self: center;
+          border-bottom: 4px solid #333333;
+          font-size: 20px;
+          font-weight: 400;
+          color: #333333;
+        }
+      }
+    }
+  }
+
+  .devDisplay {
+    justify-self: center;
+    width: 80vw;
+  }
+}

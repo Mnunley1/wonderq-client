@@ -1,0 +1,252 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.navBar {
+  padding: 1%;
+  height: 50px;
+  border-bottom: 1px solid #ffffff;
+  box-shadow: 0px 1px 10px #eeeeee;
+  display: grid;
+  grid-template-columns: 6fr 8fr;
+  align-items: center;
+}
+.navBar .navItem {
+  text-decoration: none;
+  font-size: 20px;
+  color: #333333;
+  letter-spacing: 1px;
+  transition: color 0.2s;
+}
+.navBar .navItem:hover {
+  cursor: pointer;
+  color: #999999;
+}
+.navBar .navLogo {
+  font-size: 40px;
+  font-weight: 900;
+  color: #333333;
+  letter-spacing: 2px;
+}
+
+.instructions {
+  padding: 4% 2% 2% 2%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: minmax(10px, auto);
+  grid-gap: 10px;
+}
+.instructions .description {
+  grid-column: 1;
+  grid-row: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.instructions .description .descPara {
+  border: 1px solid #aaaaaa;
+  padding: 2%;
+  width: 42vw;
+  font-size: 18px;
+  font-weight: 100;
+  letter-spacing: 2px;
+  line-height: 2;
+}
+.instructions .msgForm {
+  grid-column: 1;
+  grid-row: 2;
+  width: 50vw;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 2px;
+  align-items: center;
+}
+.instructions .msgForm .msgInput {
+  justify-self: center;
+  height: 25px;
+  width: 90%;
+  padding: 1%;
+  border: 2px solid #cccccc;
+  border-radius: 2px;
+  letter-spacing: 1px;
+  font-size: 16px;
+}
+.instructions .msgForm .submitBtn {
+  height: 40px;
+  width: 60%;
+  border: 2px solid #3688b8;
+  border-radius: 2px;
+  background: #ffffff;
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: #333333;
+  transition: transform 0.2s;
+}
+.instructions .msgForm .submitBtn:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+.instructions .queueDisplay {
+  grid-column: 2;
+  grid-row: 1/3;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 15% 80%;
+  border: 1px solid #aaaaaa;
+  padding: 2%;
+  margin-right: 2%;
+  width: 40vw;
+}
+.instructions .queueDisplay .title {
+  justify-self: center;
+}
+.instructions .queueDisplay .title .queueTitle {
+  height: 30px;
+  justify-self: center;
+  border-bottom: 4px solid #333333;
+  font-size: 20px;
+  font-weight: 400;
+  color: #333333;
+}
+.instructions .queueDisplay .msgContainer {
+  height: auto;
+  border: 1px solid #dddddd;
+  padding: 4%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: minmax(0px, auto);
+  grid-row-gap: 8px;
+}
+.instructions .queueDisplay .msgContainer .msg {
+  height: 40px;
+  padding: 1%;
+  border: 1px solid #eeeeee;
+}
+.instructions .queueDisplay .msgContainer .msg .msgLabel {
+  display: inline-block;
+  width: 110px;
+  font-weight: 900;
+  color: #333333;
+  letter-spacing: 1px;
+}
+.instructions .queueDisplay .msgContainer .msg .msgText {
+  font-weight: 100;
+  color: #333333;
+  letter-spacing: 1px;
+}
+
+.devTool {
+  margin-top: 4%;
+  padding: 2%;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.devTool .devDisplay {
+  border: 1px solid #aaaaaa;
+  padding: 2%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+}
+.devTool .devDisplay .title {
+  justify-self: center;
+}
+.devTool .devDisplay .devTitle {
+  height: 30px;
+  justify-self: center;
+  border-bottom: 4px solid #333333;
+  font-size: 20px;
+  font-weight: 400;
+  color: #333333;
+}
+.devTool .devDisplay .messageContainer {
+  height: auto;
+  border: 1px solid #dddddd;
+  padding: 4%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: minmax(0px, auto);
+  grid-row-gap: 8px;
+}
+.devTool .devDisplay .messageContainer .msg {
+  height: 40px;
+  padding: 1%;
+  border: 1px solid #eeeeee;
+}
+.devTool .devDisplay .messageContainer .msg .msgLabel {
+  display: inline-block;
+  width: 110px;
+  font-weight: 900;
+  color: #333333;
+  letter-spacing: 1px;
+}
+.devTool .devDisplay .messageContainer .msg .msgText {
+  font-weight: 100;
+  color: #333333;
+  letter-spacing: 1px;
+}
+
+@media only screen and (max-width: 690px) {
+  .instructions {
+    padding: 4% 2% 2% 2%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: minmax(10px, auto);
+    grid-gap: 10px;
+    justify-items: center;
+  }
+  .instructions .description {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .instructions .description .descPara {
+    border: 1px solid #aaaaaa;
+    padding: 2%;
+    width: 70vw;
+  }
+  .instructions .msgForm {
+    margin-bottom: 4%;
+    width: 70vw;
+    grid-column: 1;
+    grid-row: 3;
+  }
+  .instructions .msgForm .submitBtn {
+    font-size: 14px;
+    width: 80%;
+  }
+  .instructions .queueDisplay {
+    min-height: 250px;
+    grid-column: 1;
+    grid-row: 4;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 15% 80%;
+    padding: 2%;
+    margin-right: 2%;
+    width: 80vw;
+  }
+  .instructions .queueDisplay .title {
+    justify-self: center;
+  }
+  .instructions .queueDisplay .title .queueTitle {
+    height: 30px;
+    justify-self: center;
+    border-bottom: 4px solid #333333;
+    font-size: 20px;
+    font-weight: 400;
+    color: #333333;
+  }
+
+  .devDisplay {
+    justify-self: center;
+    width: 80vw;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */
